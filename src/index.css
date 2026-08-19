@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-primary-container: var(--color-primary-container);
+  --color-on-primary-container: var(--color-on-primary-container);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-container: var(--color-secondary-container);
+  --color-on-secondary-container: var(--color-on-secondary-container);
+  --color-surface: var(--color-surface);
+  --color-surface-dim: var(--color-surface-dim);
+  --color-surface-container-lowest: var(--color-surface-container-lowest);
+  --color-surface-container-low: var(--color-surface-container-low);
+  --color-surface-container: var(--color-surface-container);
+  --color-surface-container-high: var(--color-surface-container-high);
+  --color-surface-container-highest: var(--color-surface-container-highest);
+  --color-on-surface: var(--color-on-surface);
+  --color-on-surface-variant: var(--color-on-surface-variant);
+  --color-outline: var(--color-outline);
+  --color-outline-variant: var(--color-outline-variant);
+  --color-error: var(--color-error);
+  --color-error-container: var(--color-error-container);
+  --color-on-error-container: var(--color-on-error-container);
+  
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root, .dark {
+  --color-primary: #06b6d4;
+  --color-primary-container: rgba(6, 182, 212, 0.1);
+  --color-on-primary-container: #22d3ee;
+  --color-secondary: #0ea5e9;
+  --color-secondary-container: rgba(14, 165, 233, 0.1);
+  --color-on-secondary-container: #38bdf8;
+  
+  --color-surface: #121217;
+  --color-surface-dim: #0a0a0c;
+  --color-surface-container-lowest: #0a0a0c;
+  --color-surface-container-low: #121217;
+  --color-surface-container: rgba(255,255,255,0.05);
+  --color-surface-container-high: rgba(255,255,255,0.1);
+  --color-surface-container-highest: rgba(255,255,255,0.15);
+  
+  --color-on-surface: #e0e0e0;
+  --color-on-surface-variant: rgba(255,255,255,0.4);
+  --color-outline: rgba(255,255,255,0.1);
+  --color-outline-variant: rgba(255,255,255,0.05);
+  
+  --color-error: #f43f5e;
+  --color-error-container: rgba(244, 63, 94, 0.1);
+  --color-on-error-container: #fb7185;
+}
+
+@layer utilities {
+  .timer-glow {
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+  }
+  .dark .timer-glow {
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.15);
+  }
+  .pulse-emerald {
+    animation: pulse-emerald 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes pulse-emerald {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.02); }
+  }
+}
